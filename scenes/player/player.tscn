@@ -72,6 +72,42 @@ tracks/0/keys = {
 "values": [ Vector2( 2, 0 ) ]
 }
 
+[sub_resource type="Animation" id=53]
+resource_name = "sleepy_down"
+length = 0.833333
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.416667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "sleepy_side"
+length = 0.833333
+loop = true
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.416667 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 2, 1 ), Vector2( 3, 1 ) ]
+}
+
 [sub_resource type="Animation" id=46]
 resource_name = "walk_down"
 length = 0.833333
@@ -143,6 +179,8 @@ anims/RESET = SubResource( 47 )
 anims/idle_down = SubResource( 50 )
 anims/idle_side = SubResource( 51 )
 anims/idle_up = SubResource( 52 )
+anims/sleepy_down = SubResource( 53 )
+anims/sleepy_side = SubResource( 54 )
 anims/walk_down = SubResource( 46 )
 anims/walk_side = SubResource( 48 )
 anims/walk_up = SubResource( 49 )
