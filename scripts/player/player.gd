@@ -5,7 +5,6 @@ export (float) var speed := 100
 onready var sprite := $Sprite
 onready var animation_player := $AnimationPlayer
 
-var acceleration := 100
 var velocity := Vector2.ZERO
 var direction := Vector2.ZERO
 

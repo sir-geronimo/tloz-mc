@@ -13,7 +13,6 @@ config_version=4
 config/name="TLOZ MC"
 run/main_scene="res://scenes/world/world.tscn"
 config/icon="res://icon.png"
-<<<<<<<Updatedupstreamconfig/name="Tloz Mc"
 
 [display]
 
