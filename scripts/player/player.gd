@@ -1,16 +1,18 @@
 extends KinematicBody2D
 
-export (float) var speed := 200
+export (float) var speed := 100
 
-onready var animated_sprite := $AnimatedSprite
+onready var sprite := $Sprite
+onready var animation_player := $AnimationPlayer
 
-var acceleration := 200
+var acceleration := 100
 var velocity := Vector2.ZERO
 var direction := Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta) -> void:
 	direction = get_direction()
 	velocity = direction * speed
+	animation_player.play("walk_down")
 	
 	velocity = move_and_slide(velocity)
 
