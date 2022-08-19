@@ -11,7 +11,7 @@ var direction := Vector2.ZERO
 func _physics_process(_delta) -> void:
 	direction = get_direction()
 	velocity = direction * speed
-	animation_player.play("walk_down")
+	animation_player.play("idle_down")
 	
 	velocity = move_and_slide(velocity)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/player/spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=3]
@@ -21,9 +21,60 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=50]
+resource_name = "idle_down"
+length = 0.001
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "idle_side"
+length = 0.001
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "idle_up"
+length = 0.001
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 0 ) ]
+}
+
 [sub_resource type="Animation" id=46]
 resource_name = "walk_down"
-length = 0.75
+length = 0.833333
 loop = true
 step = 0.0833333
 tracks/0/type = "value"
@@ -35,13 +86,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 0, 2 ), Vector2( 1, 2 ), Vector2( 2, 2 ), Vector2( 3, 2 ), Vector2( 4, 2 ), Vector2( 5, 2 ), Vector2( 6, 2 ), Vector2( 7, 2 ), Vector2( 8, 2 ), Vector2( 9, 2 ) ]
 }
 
 [sub_resource type="Animation" id=48]
 resource_name = "walk_side"
-length = 0.75
+length = 0.833333
 loop = true
 step = 0.0833333
 tracks/0/type = "value"
@@ -53,13 +104,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 10, 2 ), Vector2( 11, 2 ), Vector2( 12, 2 ), Vector2( 13, 2 ), Vector2( 14, 2 ), Vector2( 15, 2 ), Vector2( 16, 2 ), Vector2( 17, 2 ), Vector2( 18, 2 ), Vector2( 19, 2 ) ]
 }
 
 [sub_resource type="Animation" id=49]
 resource_name = "walk_up"
-length = 0.75
+length = 0.833333
 loop = true
 step = 0.0833333
 tracks/0/type = "value"
@@ -71,7 +122,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 20, 2 ), Vector2( 21, 2 ), Vector2( 22, 2 ), Vector2( 23, 2 ), Vector2( 24, 2 ), Vector2( 25, 2 ), Vector2( 26, 2 ), Vector2( 27, 2 ), Vector2( 28, 2 ), Vector2( 29, 2 ) ]
 }
 
@@ -89,6 +140,9 @@ shape = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 47 )
+anims/idle_down = SubResource( 50 )
+anims/idle_side = SubResource( 51 )
+anims/idle_up = SubResource( 52 )
 anims/walk_down = SubResource( 46 )
 anims/walk_side = SubResource( 48 )
 anims/walk_up = SubResource( 49 )
