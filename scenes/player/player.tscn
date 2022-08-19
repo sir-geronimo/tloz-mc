@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/sprites/player/spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=3]
@@ -70,6 +70,57 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2, 0 ) ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "jump_down"
+length = 0.75
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 9 ), Vector2( 1, 9 ), Vector2( 2, 9 ), Vector2( 3, 9 ), Vector2( 4, 9 ), Vector2( 5, 9 ), Vector2( 6, 9 ), Vector2( 7, 9 ), Vector2( 8, 9 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "jump_side"
+length = 0.75
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 9, 9 ), Vector2( 10, 9 ), Vector2( 11, 9 ), Vector2( 12, 9 ), Vector2( 13, 9 ), Vector2( 14, 9 ), Vector2( 15, 9 ), Vector2( 16, 9 ), Vector2( 17, 9 ) ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "jump_up"
+length = 0.75
+step = 0.0833333
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 18, 9 ), Vector2( 19, 9 ), Vector2( 20, 9 ), Vector2( 21, 9 ), Vector2( 22, 9 ), Vector2( 23, 9 ), Vector2( 24, 9 ), Vector2( 25, 9 ), Vector2( 26, 9 ) ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -219,7 +270,7 @@ script = ExtResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 30
-vframes = 9
+vframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -230,6 +281,9 @@ anims/RESET = SubResource( 47 )
 anims/idle_down = SubResource( 50 )
 anims/idle_side = SubResource( 51 )
 anims/idle_up = SubResource( 52 )
+anims/jump_down = SubResource( 58 )
+anims/jump_side = SubResource( 59 )
+anims/jump_up = SubResource( 60 )
 anims/sleepy_down = SubResource( 53 )
 anims/sleepy_side = SubResource( 54 )
 anims/swipe_sword_down = SubResource( 55 )
