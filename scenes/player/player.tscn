@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/sprites/player/spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player/player.gd" type="Script" id=3]
@@ -121,6 +121,38 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( 18, 9 ), Vector2( 19, 9 ), Vector2( 20, 9 ), Vector2( 21, 9 ), Vector2( 22, 9 ), Vector2( 23, 9 ), Vector2( 24, 9 ), Vector2( 25, 9 ), Vector2( 26, 9 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "pick_up_new_item"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 6 ), Vector2( 1, 6 ), Vector2( 2, 6 ) ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "pick_up_new_object"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, 6 ), Vector2( 4, 6 ), Vector2( 5, 6 ), Vector2( 6, 6 ) ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -284,6 +316,8 @@ anims/idle_up = SubResource( 52 )
 anims/jump_down = SubResource( 58 )
 anims/jump_side = SubResource( 59 )
 anims/jump_up = SubResource( 60 )
+anims/pick_up_new_item = SubResource( 61 )
+anims/pick_up_new_object = SubResource( 62 )
 anims/sleepy_down = SubResource( 53 )
 anims/sleepy_side = SubResource( 54 )
 anims/swipe_sword_down = SubResource( 55 )
